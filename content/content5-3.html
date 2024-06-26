@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіти з лабораторних робіт</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+    <style>
+        .lab-content {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="number"] {
+            width: 80px;
+            height: 20px;
+            margin-right: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            background-color: #e9ae61;
+            border: 1px solid #000000;
+        }
+
+        .generateArray {
+            width: 180px;
+            height: 32px;
+            margin-top: 10px;
+            padding: 8px;
+            background-color: #e9ae61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: #000000;
+            border: 1px solid #000000; 
+        }
+
+        .generateArray:hover {
+            background-color: #e9ae6138;
+            color: #000000;
+        }
+
+        #initialArray,
+        #resultArray,
+        #sum {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #eecb98;
+            border-radius: 5px;
+            border: 1px solid #000000; 
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <main class="lab-content">
+        <label for="numElements">Введіть кількість елементів масиву:</label>
+        <div class="input-group">
+            <input type="number" id="numElements">
+            <button class="generateArray" onclick="generateArray()">Згенерувати масив</button>
+        </div>
+
+        <div id="initialArray"></div>
+        <div id="resultArray"></div>
+        <div id="sum"></div>
+    </main>
+</body>
+</html>

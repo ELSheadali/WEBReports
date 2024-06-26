@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіти з лабораторних робіт</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script async src="script.js"></script>
+</head>
+<body>
+    <main class="lab-content">
+        <h2>Код програми:</h2>
+        <pre>
+            <code>
+    const controls = document.getElementById('controls');
+    const input = controls.querySelector('input');
+    const createButton = controls.querySelector('[data-create]');
+    const destroyButton = controls.querySelector('[data-destroy]');
+    const boxesContainer = document.getElementById('boxes');
+                        
+    createButton.addEventListener('click', createBoxes);
+    destroyButton.addEventListener('click', destroyBoxes);
+                        
+    function createBoxes() {
+        const amount = input.value;
+        if (amount &lt 1 || amount > 100) {
+            alert('Please enter a number between 1 and 100.');
+            return;
+        }
+                
+        let top = 0;
+        for (let i = 0; i &lt amount; i++) {
+            const size = 30 + i * 10;
+            const color = getRandomHexColor();
+            const div = document.createElement('div');
+            div.className = 'box';
+            div.style.width = `${size}px`;
+            div.style.height = `${size}px`;
+            div.style.backgroundColor = color;
+            div.style.top = `${top}px`;
+            top += size + 5;
+            boxesContainer.appendChild(div);
+        }
+            input.value = '';
+    }
+                
+    function destroyBoxes() {
+        boxesContainer.innerHTML = '';
+    }
+            </code>
+        </pre>
+    </main>
+        </div>
+    </main>
+</body>
+</html>

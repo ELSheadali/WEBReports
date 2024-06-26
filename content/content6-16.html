@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіти з лабораторних робіт</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script async src="script.js"></script>
+</head>
+<body>
+    <main class="lab-content">
+        <h2>Код програми:</h2>
+        <pre>
+            <code>
+    document.addEventListener('DOMContentLoaded', function() {
+        const loginForm = document.querySelector('.login-form');
+                
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+                
+            const emailInput = loginForm.elements['email'];
+            const passwordInput = loginForm.elements['password'];
+                
+            if (emailInput.value.trim() === '' || passwordInput.value.trim() === '') {
+                alert('All form fields must be filled in');
+            } else {
+                const formData = {
+                    email: emailInput.value.trim(),
+                    password: passwordInput.value.trim()
+                };
+                
+                console.log(formData);
+                
+                loginForm.reset();
+                }
+            });
+    });
+            </code>
+        </pre>
+    </main>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіти з лабораторних робіт</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <main class="lab-content">
+        <p class="title">Код програми:</p>
+        <p>Вміст css. файлу </p>
+        <pre>
+<code>
+    body {
+        font-family: 'Montserrat', Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        margin: 0;
+        
+    }
+    
+    .calendar-container {
+        text-align: center;
+        background-color: #eed5b0;
+    
+        padding: 20px;
+        border: 2px solid #ccc;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: 600px;
+    }
+    
+    #selected-date {
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        width: calc(100% - 22px); /* Adjust width to match container padding */
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #e9ae61;}
+    
+    #reset-date {
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #e9ae61;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        width: calc(100% - 22px); /* Adjust width to match container padding */
+    }
+    
+    #reset-date:hover {
+        background-color: #e9ae61;
+    }
+    
+    .calendar {
+        width: 100%; /* Ensure the calendar takes the full width of the container */
+        margin-top: 10px;
+        
+    }
+    
+    .calendar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background: #e9ae61;
+        color: black;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    
+    .calendar-header button {
+        background: none;
+        border: none;
+        color: black;
+        cursor: pointer;
+        font-size: 18px;
+        margin: 0 5px;
+    }
+    
+    .month-year {
+        display: flex;
+        align-items: center;
+    }
+    
+    .month-year span {
+        margin: 0 5px;
+    }
+    
+    .calendar-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 5px;
+    }
+    
+    .calendar-table th, .calendar-table td {
+        width: 14.28%;
+        text-align: center;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    
+    .calendar-table th {
+        background: #eed5b0;
+        font-weight: bold;
+    }
+    
+    .calendar-table td {
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    
+    .calendar-table td:hover {
+        background: #f0f0f0;
+    }
+    
+    .selected {
+        background: #e9ae6165 !important;
+        color: rgb(0, 0, 0) !important;
+    }
+    
+    .today {
+        border: 2px solid #e9ae61;
+        border-radius: 50%;
+    }
+    
+</code>
+        </pre> 
+        <p>Всміст script </p>
+        <pre>
+<code>
+    document.addEventListener('DOMContentLoaded', () => {
+        const calendar = document.getElementById('calendar');
+        const selectedDateInput = document.getElementById('selected-date');
+        const resetDateButton = document.getElementById('reset-date');
+        let selectedDate = null;
+        let currentYear = null;
+        let currentMonth = null;
+    <p>Цей блок коду створює внутрішню структуру календаря, включаючи заголовок з кнопками перемикання місяців та років, таблицю з днями тижня та днями місяця, а також встановлює обробники подій для цих кнопок.</p>
+        const renderCalendar = (year, month) => {
+            calendar.innerHTML = ''; // Очищення попереднього календаря
+            // Створення заголовка календаря з назвою місяця та року
+            const calendarHeader = document.createElement('div');
+            calendarHeader.className = 'calendar-header';
+            calendarHeader.innerHTML = `
+                div class="month-year"
+                    button id="prev-year"&lt;&lt;button
+                    button id="prev-month"&lt;/button
+                    <span>${monthNames[month]span
+                    span>${year}span
+                    button id="next-month">&gt;button
+                    button id="next-year">&gt;&gt;/button
+                div
+            `;
+            // Додавання заголовка до календаря
+            calendar.appendChild(calendarHeader);
+            // Створення таблиці для календаря
+            const calendarTable = document.createElement('table');
+            calendarTable.className = 'calendar-table';
+            // Додавання заголовка днів тижня до таблиці
+            const headerRow = document.createElement('tr');
+            dayNames.forEach(day => {
+                const th = document.createElement('th');
+                th.textContent = day;
+                headerRow.appendChild(th);
+            });
+            calendarTable.appendChild(headerRow);
+            // Додавання рядків з днями місяця до таблиці
+            for (let i = 0; i < 6; i++) {
+                const row = document.createElement('tr');
+                for (let j = 0; j < 7; j++) {
+                    // Створення комірок для кожного дня
+                    const cell = document.createElement('td');
+                    // Заповнення днями місяця
+                    // Позначення обраної дати та додавання класу 'selected', якщо вона співпадає
+                    // Обробник кліків для вибору дати
+                    row.appendChild(cell);
+                }
+                calendarTable.appendChild(row);
+            }
+            // Додавання таблиці до календаря
+            calendar.appendChild(calendarTable);
+            // Додавання обробників подій для кнопок перемикання місяців і років
+        };
+    
+            const headerRow = document.createElement('tr');
+            dayNames.forEach(day => {
+                const th = document.createElement('th');
+                th.textContent = day;
+                headerRow.appendChild(th);
+            });
+            calendarTable.appendChild(headerRow);
+    
+            let date = 1;
+            for (let i = 0; i < 6; i++) {
+                const row = document.createElement('tr');
+                for (let j = 0; j < 7; j++) {
+                    const cell = document.createElement('td');
+                    if (i === 0 && j < firstDayOfMonth) {
+                        cell.textContent = '';
+                    } else if (date > daysInMonth) {
+                        cell.textContent = '';
+                    } else {
+                        cell.textContent = date;
+                        cell.dataset.date = `${year}-${month + 1}-${date}`;
+                        if (selectedDate === cell.dataset.date) {
+                            cell.classList.add('selected');
+                        }
+                        if (j === 0 && date === 1) {
+                            cell.dataset.month = true; // Add data attribute to mark month names
+                        }
+                        cell.addEventListener('click', () => {
+                            selectedDate = cell.dataset.date;
+                            selectedDateInput.value = selectedDate;
+                            updateSelectedDateClass();
+                        });
+                        date++;
+                    }
+                    row.appendChild(cell);
+                }
+                calendarTable.appendChild(row);
+            }
+            calendar.appendChild(calendarTable);
+    
+            // Store current year and month for navigation
+            currentYear = year;
+            currentMonth = month;
+    
+            document.getElementById('prev-month').addEventListener('click', () => {
+                const newMonth = currentMonth - 1;
+                if (newMonth < 0) {
+                    renderCalendar(currentYear - 1, 11);
+                } else {
+                    renderCalendar(currentYear, newMonth);
+                }
+            });
+    
+            document.getElementById('next-month').addEventListener('click', () => {
+                const newMonth = currentMonth + 1;
+                if (newMonth > 11) {
+                    renderCalendar(currentYear + 1, 0);
+                } else {
+                    renderCalendar(currentYear, newMonth);
+                }
+            });
+    
+            document.getElementById('prev-year').addEventListener('click', () => {
+                renderCalendar(currentYear - 1, currentMonth);
+            });
+    
+            document.getElementById('next-year').addEventListener('click', () => {
+                renderCalendar(currentYear + 1, currentMonth);
+            });
+        };
+    <p>Ця функція встановлює клас 'selected' для комірок, які відповідають обраній даті, та забирає цей клас для інших комірок. Вона використовується для оновлення вигляду обраної дати при кожному її зміні.</p>
+        const updateSelectedDateClass = () => {
+            const cells = document.querySelectorAll('.calendar-table td');
+            cells.forEach(cell => {
+                if (cell.dataset.date === selectedDate) {
+                    cell.classList.add('selected');
+                } else {
+                    cell.classList.remove('selected');
+                }
+            });
+        };
+        
+        resetDateButton.addEventListener('click', () => {
+            const today = new Date();
+            selectedDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+            selectedDateInput.value = selectedDate;
+            renderCalendar(today.getFullYear(), today.getMonth());
+            updateSelectedDateClass();
+        });
+    
+        // Initialize calendar with current date
+        const today = new Date();
+        selectedDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+        selectedDateInput.value = selectedDate;
+        renderCalendar(today.getFullYear(), today.getMonth());
+    });
+</code>
+    </main>
+</body>
+</html>

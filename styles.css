@@ -1,0 +1,313 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e4dad1;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+  
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eed5b0; 
+    margin: 10px;
+    border: 2px solid #000000; 
+    border-radius: 10px; 
+    color: #ae00ff; 
+    padding: 10px;
+    font-family: 'Montserrat';
+}
+  
+.upper-header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.lower-header  {
+    width: auto;
+    justify-content: center;
+}
+
+.photo-section, .text-section {
+    flex: 1;
+    text-align: center; 
+}
+
+.photo-section{
+    flex: 0 0 15%;
+    margin-top: auto;
+}
+  
+.text-section {
+    flex: 0 0 70%;
+}
+  
+img {
+    max-width: 100%;
+    height: auto;
+    max-height: 150px; 
+}
+
+p {
+    line-height: 1.6;
+    color: #000000;
+    font-size: 18px;
+}
+
+button {
+    background-color: #e4dad1;
+    color: #000000;
+    padding: 10px 20px;
+    border: 2px solid #000000; 
+    border-radius: 10px; 
+    cursor: pointer;
+    text-align: center;       /* Centered text */
+    display: inline-block;    /* Make the link into a block element */
+    transition: background-color 0.3s; /* Smooth transition for the background color */
+    font-family: 'Montserrat';
+}
+
+button:hover {
+    background-color: #e9ae61;
+}
+
+button:active, button:focus {
+    background-color: #e9ae61;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat';
+    font-size: 12;
+    color: #000000;
+}
+
+footer {
+    background-color: #eed5b0;
+    text-align: center;
+    height: 25px;
+    padding: 10px;
+    margin-top: auto; 
+    border-top: 2px solid #000000; 
+}
+
+.main2 {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.buttons {
+    flex-shrink: 0;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    margin-left: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.buttons button {
+    margin-bottom: 10px;
+    border: 2px solid #000000; 
+    border-radius: 20px;
+    width: 300px;
+    height: 60px;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    text-align: left;
+    background-color: #eed5b0;
+}
+
+.buttons button:hover {
+    background-color: #e9ae61;
+}
+
+.buttons button:active, button:focus {
+    background-color: #e9ae61;
+}
+
+.buttons button.right {
+    margin-left: 100px;
+    width: fit-content;
+}
+
+.main2-content {
+    flex: 1;
+    background-color: #eed5b0;
+    margin: 30px;
+    height: 700px;
+    width: 1770px; 
+    border: 1px solid #000000;
+    overflow: auto; 
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#main-lab3 {
+    height: 500px;
+}
+
+/* Загальні стилі для основного вмісту */
+.lab-content {
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    color: #000000;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+/* Стилі для заголовків */
+.title {
+    font-weight: bold;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.main-title {
+    font-weight: bold;
+    background-color: #e9ae6138;
+    padding: 10px;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* Стилі для списків */
+.lab-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.lab-content ul li {
+    margin-bottom: 10px;
+    color: black;
+}
+
+/* Стилі для параграфів */
+.lab-content p {
+    margin-left: 10px;
+    margin-right: 30px;
+    font-family: 'Montserrat';
+    font-size: 16;
+}
+
+/* Стилі для фотографій */
+.photo-content1-3 {
+    margin: auto;
+    margin-left: 25px;
+}
+
+.photo-content1-3 img {
+    width: 100%;
+    max-height: 400px;
+    display: block;
+    margin: auto;
+}
+
+.photo-content4-4, .photo-content4-5{
+    height: 800px;
+    width: 50%;
+    position: relative;
+    margin-left: 15px;
+}
+
+.photo-content4-5{
+    height: 700px;
+}
+
+.photo-content4-4 img {
+    width: 100%;
+    max-height: 800px;
+}
+
+.photo-content4-5 img {
+    width: 70%;
+    max-height: 800px;
+}
+
+.adaptive-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+
+}
+
+.adaptive-layout img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.lab6photos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center; /* Center the photos horizontally */
+    align-items: center; /* Center the photos vertically if they are of different heights */
+}
+
+.lab6photos img {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.lab6photos img.lab6-3 {
+    width: calc(50% - 10px);
+    height: auto;
+
+}
+
+.lab6photos img.lab6-6 {
+    width: calc(80% - 10px);
+    height: auto;
+}
+
+.lab6photos img.lab6-9 {
+    width: calc(35% - 10px);
+    height: auto;
+}
+
+
+.lab6photos img.lab6-15 {
+    width: calc(150% - 10px);
+    height: auto;
+}
+
+.lab6photos img.lab6-21 {
+    width: calc(200% - 10px);
+    height: 1000px;
+}
+

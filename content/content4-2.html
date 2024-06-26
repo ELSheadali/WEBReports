@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіти з лабораторних робіт</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <main class="lab-content">
+        <p class="title">Завдання №1</p>
+        <p> Використовуючі медіа-запити та СSS- правила, для вибраних вами брейкпоінтів, виконати адаптивну верстку для:</p>
+        <ul>
+            <li>Десктопної версії</li>
+            <li>Планшетної версії</li>
+            <li>Мобільної версії</li>
+        </ul>
+        <pre><code>
+          .flexCol {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 207px 0px;
+            @include md {
+              gap: 150px 0px;
+            }
+            @include xs {
+              gap: 80px 0px;
+            }
+            @include tn {
+              gap: 50px 0px;
+            }
+          }
+          .flexRow {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            gap: 0px 10px;
+            margin: 0px 16px 0px auto;
+            width: 1482.0313720703125px;
+            max-width: 85%;
+            @include lg {
+              flex-direction: column;
+              align-items: center;
+              gap: 30px 10px;
+            }
+            @include tn {
+              margin: 0px 8px 0px auto;
+            }
+          }
+          .mediumTitle {
+            position: relative;
+            display: flex;
+            margin: 0px 0px 22px;
+            font: 400 24px/1.58 "Baloo", Helvetica, Arial, serif;
+            color: rgb(0, 0, 0);
+            @include lg {
+              margin-top: unset;
+              margin-bottom: unset;
+              width: 100%;
+            }
+            @include md {
+              align-items: flex-start;
+              font-size: 22px;
+            }
+            @include xxs {
+              justify-content: center;
+              text-align: center;
+              font-size: 20px;
+            }
+          }
+          .heroTitle {
+            position: relative;
+            display: flex;
+            font: 56px/1.17 "Rubik Glitch", Helvetica, Arial, serif;
+            color: rgb(0, 0, 0);
+            @include lg {
+              margin-top: unset;
+              margin-bottom: unset;
+              width: 100%;
+            }
+            @include md {
+              align-items: flex-start;
+              font-size: 50px;
+            }
+            @include xxs {
+              font-size: 36px;
+            }
+            @include tn {
+              justify-content: center;
+              text-align: center;
+            }
+          }
+          
+          .heroTitle:hover,
+          .mediumTitle:hover{
+            opacity: 0.8;
+          }
+          .flexRow1 {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0px 22px;
+            margin: 5px 0px 2px;
+            width: 118px;
+            min-width: 0px;
+            @include lg {
+              margin-top: unset;
+              margin-bottom: unset;
+              width: 100%;
+              min-width: unset;
+            }
+            @include xs {
+              column-gap: 16px;
+            }
+            @include xxs {
+              justify-content: center;
+            }
+            @include tn {
+              column-gap: 8px;
+            }
+          }
+          
+          .flexRow2 {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            gap: 0px 10px;
+            @include sm {
+              flex-direction: column;
+              align-items: center;
+              gap: 30px 10px;
+            }
+          }
+          .clothingImage {
+            position: relative;
+            margin: 405px 0px 0px;
+            width: 382px;
+            min-width: 0px;
+            object-fit: cover;
+            @include md {
+              margin: 150px 0px 0px;
+            }
+            @include sm {
+              margin-top: unset;
+              margin-bottom: unset;
+              width: 100%;
+              min-width: unset;
+              max-width: 382px;
+            }
+          }
+          .image3 {
+            position: relative;
+            margin: 0px 0px 405px;
+            width: 382px;
+            min-width: 0px;
+            object-fit: cover;
+            @include md {
+              margin: 0px 0px 150px;
+            }
+            @include sm {
+              margin-top: unset;
+              margin-bottom: unset;
+              width: 100%;
+              min-width: unset;
+              max-width: 382px;
+            }
+           </pre></code>
+    </main>
+</body>
+</html>

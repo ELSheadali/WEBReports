@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фіксована таблична верстка</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        table {
+            width: calc(100% - 400px); /* Відступи по 20px з кожного боку */
+            height: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 24px;
+            color: white;
+        }
+        /* Задання різних кольорів для кожного прямокутника */
+        .rect1 { background-color: blue; }
+        .rect2 { background-color: yellow; }
+        .rect3 { background-color: blue; }
+        .rect4 { background-color: white; color: black; }
+        .rect5 { background-color: yellow; color: black; }
+
+        /* Визначення висоти для рядків */
+        .row1 { height: 10%; }
+        .row2 { height: 60%; }
+        .row3 { height: 10%; }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="row1">
+            <td colspan="3" class="rect1">1</td>
+        </tr>
+        <tr class="row2">
+            <td class="rect2">2</td>
+            <td class="rect4">4</td>
+            <td class="rect5">5</td>
+        </tr>
+        <tr class="row3">
+            <td colspan="3" class="rect3">3</td>
+        </tr>
+    </table>
+</body>
+</html>

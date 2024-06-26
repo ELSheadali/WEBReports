@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Звіти з лабораторних робіт</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script async src="script.js"></script>
+</head>
+<body>
+    <main class="lab-content">
+        <h2>Код програми:</h2>
+        <pre>
+            <code>
+    document.addEventListener('DOMContentLoaded', function() {
+        const categoriesList = document.getElementById('categories');
+                
+        if(categoriesList) {
+            const categoriesItems = categoriesList.querySelectorAll('.item');
+                
+            console.log(`Total categories: ${categoriesItems.length}`);
+                
+            categoriesItems.forEach(category => {
+                const categoryName = category.querySelector('h2').textContent;
+                
+                const categoryItems = category.querySelectorAll('ul li');
+                
+                console.log(`Category: ${categoryName}`);
+                console.log(`Number of items: ${categoryItems.length}`);
+            });
+        } else {
+            console.error('Element with id "categories" not found.');
+        }
+    });
+            </code>
+        </pre>
+    </main>
+        </div>
+    </main>
+</body>
+</html>
